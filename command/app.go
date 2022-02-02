@@ -28,10 +28,10 @@ var app = &cli.App{
 			Name:  "json",
 			Usage: "enable JSON formatted output",
 		},
-		&cli.BoolFlag{
-			Name:  "nolistv2",
-			Usage: "disable use of list-objectsv2",
-		},
+		//		&cli.BoolFlag{
+		//			Name:  "nolistv2",
+		//			Usage: "disable use of list-objectsv2",
+		//		},
 		&cli.IntFlag{
 			Name:  "numworkers",
 			Value: defaultWorkerCount,
