@@ -80,7 +80,7 @@ var app = &cli.App{
 		printJSON := c.Bool("json")
 		logLevel := c.String("log")
 		isStat := c.Bool("stat")
-		nos3listv2 := c.Bool("nolistv2")
+		//		nos3listv2 := c.Bool("nolistv2")
 
 		log.Init(logLevel, printJSON)
 		parallel.Init(workerCount)
