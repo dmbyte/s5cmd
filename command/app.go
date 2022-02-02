@@ -28,6 +28,10 @@ var app = &cli.App{
 			Name:  "json",
 			Usage: "enable JSON formatted output",
 		},
+		&cli.BoolFlag{
+			Name:  "nolistv2",
+			Usage: "disable use of list-objectsv2",
+		},
 		&cli.IntFlag{
 			Name:  "numworkers",
 			Value: defaultWorkerCount,
@@ -76,6 +80,7 @@ var app = &cli.App{
 		printJSON := c.Bool("json")
 		logLevel := c.String("log")
 		isStat := c.Bool("stat")
+		nos3listv2 := c.Bool("nolistv2")
 
 		log.Init(logLevel, printJSON)
 		parallel.Init(workerCount)

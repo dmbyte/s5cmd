@@ -124,11 +124,12 @@ func (s *S3) Stat(ctx context.Context, url *url.URL) (*Object, error) {
 // List is a non-blocking S3 list operation which paginates and filters S3
 // keys. If no object found or an error is encountered during this period,
 // it sends these errors to object channel.
+// DMB - need to add if to check if nos3listv2 is set
 func (s *S3) List(ctx context.Context, url *url.URL, _ bool) <-chan *Object {
 	if isGoogleEndpoint(s.endpointURL) {
 		return s.listObjects(ctx, url)
 	}
-	return s.listObjectsV2(ctx, url)
+	return s.listObjects(ctx, url)
 }
 
 func (s *S3) listObjectsV2(ctx context.Context, url *url.URL) <-chan *Object {
