@@ -129,7 +129,7 @@ func (s *S3) List(ctx context.Context, url *url.URL, _ bool) <-chan *Object {
 	if isGoogleEndpoint(s.endpointURL) {
 		return s.listObjects(ctx, url)
 	}
-	return s.listObjects(ctx, url)
+	return s.listObjectsV2(ctx, url)
 }
 
 func (s *S3) listObjectsV2(ctx context.Context, url *url.URL) <-chan *Object {
